@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>云上长征 · 红色之旅 —— 沉浸式红色数字文旅平台（雏形 Demo）</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="map"></canvas>
+
+<div class="topbar">
+  <h1>云上长征 · <span class="red">红色之旅</span></h1>
+  <div class="sub">沉浸式红色数字文旅平台 · 重走二万五千里长征<span class="hide-m"><br><em>拖拽平移</em> · 滚轮缩放 · 点击节点开启时空漫游</span></div>
+</div>
+<div class="badge">CMIT 数媒竞赛 ·「红色之旅 追梦铸魂」 · v0.4 老地图版</div>
+
+<div class="nav" id="nav"></div>
+
+<div class="card" id="card">
+  <button class="close" id="cardClose">×</button>
+  <div class="date" id="cDate"></div>
+  <h2 id="cTitle"></h2>
+  <div class="body" id="cBody"></div>
+  <div class="detail" id="cDetail"></div>
+  <div class="acts">
+    <span id="prevBtn">← 上一处</span>
+    <span id="nextBtn">下一处 →</span>
+  </div>
+  <div class="foot-note">🎙 语音讲解（接入中） · <b id="aiOpen">🤖 问问 AI 导游</b></div>
+</div>
+
+<div class="ai-fab" id="aiFab" title="AI 红色导游">🤖</div>
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-head">
+    <div class="ai-title">🤖 AI 红色导游<span class="ai-mode" id="aiMode">本地智导</span></div>
+    <div>
+      <button class="ai-btn" id="aiGear" title="接入大模型">⚙</button>
+      <button class="ai-btn" id="aiClose" title="关闭">×</button>
+    </div>
+  </div>
+  <div class="ai-msgs" id="aiMsgs"></div>
+  <div class="ai-chips" id="aiChips"></div>
+  <div class="ai-input">
+    <input id="aiText" placeholder="向导游提问，如：遵义会议为什么是转折点？" />
+    <button id="aiSend">发送</button>
+  </div>
+  <div class="ai-settings" id="aiSettings">
+    <input id="aiBaseUrl" placeholder="API 地址（OpenAI 兼容），如 https://api.deepseek.com/v1" />
+    <input id="aiKey" type="password" placeholder="API Key（仅保存在本机浏览器）" />
+    <input id="aiModel" placeholder="模型名，如 deepseek-chat" />
+    <button id="aiSave">保存并启用大模型</button>
+    <button id="aiLocal">退回本地智导</button>
+  </div>
+</div>
+
+<script src="js/map-data.js"></script>
+<script src="js/kb-data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ai.js"></script>
+</body>
+</html>
